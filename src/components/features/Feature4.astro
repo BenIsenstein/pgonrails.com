@@ -1,0 +1,95 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const sections = [
+  {
+    title: "Single-command deploy",
+    paragraph:
+      "Deploy to Railway with a single command using the PG On Rails CLI. Run a deploy script via curl and get working on your application in minutes.",
+  },
+  {
+    title: "Frontend dev mode",
+    paragraph:
+      "NextJS dev mode within Docker Compose. Seamless hot-reloading within the Docker Compose stack, so you can access all of the Supabase data APIs in development. Local dev that accurately reflects prod.",
+  },
+  {
+    title: "Modern auth UI out of the box",
+    paragraph:
+      "SaaS template included. Integrated right into the Docker Compose stack, and including a UI to manage users with Supabase Auth.",
+  },
+  {
+    title: "Manage email templates",
+    paragraph:
+      "First-class support for auth email templates. Edit your templates and see them instantly update in local development. Version your templates and colocate them with the auth service in git.",
+  },
+  {
+    title: "No mail server yet, no problem",
+    paragraph:
+      "By default, mailing is disabled. Once a user signs up with their email and password, their email is \"auto-confirmed\" by the auth server and they are signed in.",
+  },
+  {
+    title: "DB migrations automated",
+    paragraph:
+      "The frontend service (\"Site\") automatically runs DB migrations on startup. Optionally move migrations to a GitHub action - boilerplate included.",
+  },
+  {
+    title: "CI/CD made easy",
+    paragraph:
+      "Railway's CI/CD works seamlessly from the moment you create your project. Begin pushing code and watch your app continuously deploy.",
+  },
+  {
+    title: "Version everything",
+    paragraph:
+      "No feature or config is too small. Colocate all of a service's files in its own directory, so no matter how micro your change, your service will be rebuilt by CI/CD.",
+  },
+  {
+    title: "Extensible",
+    paragraph:
+      "Add more services, or tear out those you don't need. Add plugins or routes to Kong Gateway. A transparent repo structure and the open nature of Docker Compose allows for maximum extensibility.",
+  },
+  {
+    title: "Portable between clouds",
+    paragraph:
+      "Railway is just the beginning. Take your app to any VPS or cloud that supports Docker Compose. Our roadmap includes first-class support and tutorials for Fly.io, Linode, Azure and more.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-2">
+    <div class="px-8 pt-24 bg-orange">
+      <Text
+        tag="h2"
+        variant="display3XL"
+        class="font-bold tracking-tighter text-white text-balance lg:col-span-2 lg:col-start-3"
+      >
+        It's all in the details. Packed with thoughtful features for a fantastic DX.</Text
+      >
+      <div class="flex flex-col mt-12 border-t border-dashed border-white/20">
+        {
+          sections.map((section, index) => (
+            <div class="sticky top-0 z-10 py-12  grid grid-cols-1 gap-4 lg:gap-0 lg:grid-cols-4 bg-orange">
+              <Text
+                tag="h3"
+                variant="displayLG"
+                class="font-semibold tracking-tight text-white lg:col-span-2"
+              >
+                {section.title}
+              </Text>
+              <div class="h-full border-dashed lg:col-span-2  gap-8 lg:pb-24 lg:pl-12 lg:border-l lg:border-white/20">
+                <Text
+                  tag="p"
+                  variant="textLG"
+                  class="max-w-xl font-semibold text-white"
+                >
+                  {section.paragraph}
+                </Text>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>

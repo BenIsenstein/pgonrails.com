@@ -1,0 +1,64 @@
+---
+// Assets
+import Bars from "@/components/assets/Bars.astro";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pb-2 pt-50">
+      <Text
+        tag="h1"
+        variant="display6XL"
+        class="font-bold tracking-tighter text-black text-balance"
+      >
+        Link</Text
+      >
+      <Bars class="mt-2">Styles</Bars>
+    </Wrapper>
+
+    <Wrapper variant="standard" class="py-2">
+      <div class="flex flex-col px-8 py-12 gap-12 bg-orange">
+        <div>
+          <Text
+            tag="p"
+            variant="displaySM"
+            class="font-semibold tracking-tight text-black text-balance"
+          >
+            Default
+          </Text>
+          <div class="flex flex-wrap items-center gap-4">
+            <Link href="#_" size="xs" variant="default">Default XS</Link>
+            <Link href="#_" size="sm" variant="default">Default SM</Link>
+            <Link href="#_" size="base" variant="default">Default Base</Link>
+            <Link href="#_" size="md" variant="default">Default MD</Link>
+            <Link href="#_" size="lg" variant="default">Default LG</Link>
+            <Link href="#_" size="xl" variant="default">Default XL</Link>
+          </div>
+        </div>
+
+        <div>
+          <Text
+            tag="p"
+            variant="displaySM"
+            class="font-semibold tracking-tight text-black text-balance"
+          >
+            Muted
+          </Text>
+          <div class="flex flex-wrap items-center gap-4">
+            <Link href="#_" size="xs" variant="muted">Muted XS</Link>
+            <Link href="#_" size="sm" variant="muted">Muted SM</Link>
+            <Link href="#_" size="base" variant="muted">Muted Base</Link>
+            <Link href="#_" size="md" variant="muted">Muted MD</Link>
+            <Link href="#_" size="lg" variant="muted">Muted LG</Link>
+            <Link href="#_" size="xl" variant="muted">Muted XL</Link>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

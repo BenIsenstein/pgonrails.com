@@ -1,0 +1,56 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const features = [
+  {
+    title: "Built for modern clouds",
+    paragraph: "Railway service watch paths. Fly.io app build contexts. These features allow for a monorepo code format, with one directory per cloud service. Build fast and watch modern CI/CD continuously deploy your app.",
+  },
+  {
+    title: "From local to production seamlessly",
+    paragraph: "Committed to a dev experience using Docker Compose, and a deployment story that looks as much as possible like local dev. Easier mental mapping from local dev to deployed cloud environments.",
+  },
+  {
+    title: "Your frontend included in the stack",
+    paragraph: "Reduce context-switching and host as much of your stack as possible on the same platform. For NextJS, Django, htmx or any server-rendered frontend, get fast and secure access to Supabase data APIs via the shared internal network.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-2">
+    <div class="px-8 py-24 bg-gray">
+      <Text
+        tag="h2"
+        variant="display5XL"
+        class="font-bold tracking-tighter text-black text-balance"
+        >DX with Supabase, reimagined</Text
+      >
+      <div
+        class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-24"
+      >
+        {
+          features.map((feature) => (
+            <div class="border-dashed lg:pl-8 lg:border-l lg:border-black/20">
+              <Text
+                tag="h3"
+                variant="displaySM"
+                class="font-semibold tracking-tight text-black  text-balance"
+              >
+                {feature.title}
+              </Text>
+              <Text
+                tag="p"
+                variant="textLG"
+                class="mt-4 font-semibold text-black  lg:mt-48"
+              >
+                {feature.paragraph}
+              </Text>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>

@@ -1,0 +1,45 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { Image } from "astro:assets";
+import Railway from "@/images/icons/railway.svg";
+import Supabase from "@/images/icons/supabase.svg";
+import Postgres from "@/images/icons/postgres.svg";
+import Nextjs from "@/images/icons/nextjs.svg";
+import Docker from "@/images/icons/docker.svg";
+
+const icons = [
+  { src: Railway, alt: "Railway" },
+  { src: Supabase, alt: "Supabase" },
+  { src: Postgres, alt: "PostgreSQL" },
+  { src: Nextjs, alt: "Next.js" },
+  { src: Docker, alt: "Docker" },
+];
+---
+
+<section class="bg-white">
+  <Wrapper variant="standard" class="py-2">
+    <div class="overflow-hidden py-12">
+      <div class="flex animate-marquee hover:[animation-play-state:paused] gap-16 w-max">
+        {icons.map((icon) => (
+          <Image
+            src={icon.src}
+            alt={icon.alt}
+            class="h-16 w-16 object-contain"
+            width={64}
+            height={64}
+          />
+        ))}
+        {/* Duplicate icons for seamless loop */}
+        {icons.map((icon) => (
+          <Image
+            src={icon.src}
+            alt={icon.alt}
+            class="h-16 w-16 object-contain"
+            width={64}
+            height={64}
+          />
+        ))}
+      </div>
+    </div>
+  </Wrapper>
+</section>

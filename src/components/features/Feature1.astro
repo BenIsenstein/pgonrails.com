@@ -1,0 +1,72 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const sections = [
+  {
+    title: "Sane Defaults",
+    paragraph:
+      "Get working on real application features in seconds. Smart defaults help you start building right away. Avoid drowning in config, and opt in to more hackability as needed.",
+  },
+  {
+    title: "Transparent",
+    paragraph:
+      "Get a clearer picture of how your Supabase app works. Codebase structure that makes it easier to understand your architecture and build faster.",
+  },
+  {
+    title: "Configurable",
+    paragraph:
+      "For the hackers. Configure every aspect of your Supabase app. We provide the full reference of environment config and links to official docs, per-service, right in your codebase.",
+  },
+  {
+    title: "Versionable",
+    paragraph:
+      "Every service gets its own directory, so watchpaths just work. Add new functions, migrations, or config to a service, commit your work, and Railway (or your CI/CD of choice) will trigger a new build.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-2">
+    <div class="px-8 pt-24 bg-orange">
+      <Text
+        tag="h2"
+        variant="displayLG"
+        class="font-semibold tracking-tight text-white text-balance"
+        >Bootstrap, self-host and build with Supabase, on Railway and beyond. Full feature parity, active maintenance, and technical support.</Text
+      >
+      <div class="flex flex-col mt-12">
+        {
+          sections.map((section, index) => (
+            <div class="sticky top-0 z-10 py-8 border-t border-dashed border-white/20 grid grid-cols-1 gap-12 lg:gap-0 lg:grid-cols-5 bg-orange">
+              <Text
+                tag="span"
+                variant="display2XL"
+                class="font-bold tracking-tight text-white"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </Text>
+
+              <div class="flex flex-col border-dashed lg:col-span-4 gap-24 lg:pl-12 lg:border-l lg:border-white/20">
+                <Text
+                  tag="h3"
+                  variant="display2XL"
+                  class="font-bold tracking-tight text-white"
+                >
+                  {section.title}
+                </Text>
+                <Text
+                  tag="p"
+                  variant="textLG"
+                  class="max-w-xl font-semibold text-white"
+                >
+                  {section.paragraph}
+                </Text>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>

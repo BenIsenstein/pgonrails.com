@@ -1,0 +1,175 @@
+---
+// Assets
+import Bars from "@/components/assets/Bars.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Sctions
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Feature1 from "@/components/features/Feature1.astro";
+import Feature2 from "@/components/features/Feature2.astro";
+import Feature3 from "@/components/features/Feature3.astro";
+import Feature4 from "@/components/features/Feature4.astro";
+import Cta from "@/components/cta/Cta.astro";
+import IntegrationsCta from "@/components/integrations/IntegrationsCta.astro";
+import Testimonial from "@/components/testimonials/Testimonial.astro";
+import IconsCarousel from "@/components/features/IconsCarousel.astro";
+
+const codeExampleTabs = [
+  {
+    supaCmds: [
+      "supabase init",
+      "supabase link",
+      "supabase start",
+      "supabase stop",
+      "supabase status"
+    ],
+    railsCmds: [
+      "git clone",
+      "docker compose up",
+      "docker compose down",
+      "docker compose ps"
+    ]
+  },
+  {
+    supaCmds: [
+      "supabase projects create",
+      "supabase projects delete",
+      "supabase branches",
+    ],
+    railsCmds: [
+      "gh repo create",
+      "gh repo delete",
+      "git branch"
+    ]
+  },
+  {
+    supaCmds: [
+      "supabase functions new"
+    ],
+    railsCmds: [
+      "git push"
+    ]
+  },
+]
+---
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pb-2 pt-50">
+      <Text
+        tag="h1"
+        variant="display6XL"
+        class="font-bold tracking-tighter text-black text-balance"
+        >PG On Rails</Text
+      >
+      <Bars class="mt-2">Self-Hosted Supabase. Amazing developer experience.</Bars>
+    </Wrapper>
+  </section>
+  <IconsCarousel />
+  <Feature1 />
+  <section>
+    <Wrapper variant="standard" class="py-2">
+      <div class="px-8 py-24 flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row items-center bg-linear-to-r from-cyan to-yellow">
+        <div class="flex flex-col space-y-4 w-full md:w-1/2">
+          <Text
+            tag="h2"
+            variant="displayLG"
+            class="font-semibold tracking-tight text-black text-balance"
+          >
+            Back to basics. Build with the tooling beneath the tooling.
+          </Text>
+          <Text
+            tag="p"
+            class=""
+          >
+            Docker, GitHub, Shell, YAML. Develop directly with Docker Compose, see more deeply into your project, and move faster while managing multiple projects locally.
+          </Text>
+        </div>
+
+        <div class="rounded-md bg-white p-4 w-full md:w-1/2 flex flex-col lg:grid lg:grid-cols-3 gap-2">
+          <div class="flex justify-center items-center">
+            <div class="flex flex-col gap-2">
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase init
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase link
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase start
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase stop
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase status
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase projects create
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase projects delete
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase branches
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase functions new
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase functions download
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm opacity-40 lg:opacity-100">
+                supabase functions serve
+              </div>
+            </div>
+          </div>
+
+          <div class="h-full flex items-center justify-center text-xl hidden lg:flex">
+            --->
+          </div>
+          
+          <hr class="my-4 h-full flex items-center justify-center text-xl lg:hidden">
+
+          <div class="flex justify-center items-center">
+            <div class="flex flex-col gap-2">
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                git clone
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                docker compose build
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                docker compose up
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                docker compose down
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                docker compose ps
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                git push
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                gh repo create
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                gh repo delete
+              </div>
+              <div class="font-mono text-sm bg-gray-300 w-max px-1 rounded-sm">
+                git branch
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+  <Feature2 />
+  <Feature3 />
+  <Feature4 />
+  <Cta />
+  <IntegrationsCta />
+  <!-- <Testimonial /> -->
+</BaseLayout>
