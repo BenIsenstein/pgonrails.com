@@ -20,25 +20,20 @@ const icons = [
   <Wrapper variant="standard" class="py-2">
     <div class="overflow-hidden py-12">
       <div class="flex animate-marquee hover:[animation-play-state:paused] gap-16 w-max">
-        {icons.map((icon) => (
-          <Image
-            src={icon.src}
-            alt={icon.alt}
-            class="h-16 w-16 object-contain"
-            width={64}
-            height={64}
-          />
-        ))}
-        {/* Duplicate icons for seamless loop */}
-        {icons.map((icon) => (
-          <Image
-            src={icon.src}
-            alt={icon.alt}
-            class="h-16 w-16 object-contain"
-            width={64}
-            height={64}
-          />
-        ))}
+        {
+          Array(5).fill(
+            icons.map((icon) => (
+              <Image
+                src={icon.src}
+                alt={icon.alt}
+                class="h-16 w-16 object-contain"
+                width={64}
+                height={64}
+              />
+            ))
+          )
+        }
+       
       </div>
     </div>
   </Wrapper>
